@@ -8,7 +8,7 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/news");
+        const response = await axios.get("https://newsapp-4f8o.onrender.com/news");
         setData(response.data.articles);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -21,7 +21,7 @@ const App = () => {
   const handleSearch = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/search",
+        "https://newsapp-4f8o.onrender.com/search",
         { query: searchQuery }
       );
       setData(response.data.articles);
