@@ -44,14 +44,14 @@ const App = () => {
             onChange={(e) => setSearchQuery(e.target.value)}
           />
           <button
-            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-r-md"
+            className="bg-violet-500 hover:bg-violet-600 text-white font-bold py-2 px-4 rounded-r-md"
             type="button"
             onClick={handleSearch}
           >
             Search
           </button>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 p-4">
           {data
             .filter((article) => article.urlToImage) // Filter out articles without an image
             .map((article, index) => (
@@ -72,7 +72,7 @@ const App = () => {
                     href={article.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md inline-block"
+                    className="bg-violet-500 hover:bg-violet-600 text-white font-bold py-2 px-4 rounded-md inline-block"
                   >
                     Read More
                   </a>

@@ -35,9 +35,14 @@ app.get('/news', async (req, res) => {
 
 app.post('/search', async (req, res) => {
   const { query } = req.body;
+  const currentDate = new Date();
+currentDate.setDate(currentDate.getDate() - 1);
+const yesterdayDate = currentDate.toISOString().split('T')[0];
 
   try {
-    const url = `${apiUrl}everything?q=${query}&apiKey=${apiKey}`;
+    const url = `${apiUrl}everything?q=${query}&from=${yesterdayDate}&sortBy=publishedAt&apiKey=${apiKey}`;
+    // console.log(url)
+
     const response = await axios.get(url);
     res.json(response.data);
   } catch (error) {
